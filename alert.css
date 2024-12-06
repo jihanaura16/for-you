@@ -1,0 +1,69 @@
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    text-align: center;
+    margin-top: 50px;
+}
+.floating-nyan-cat {
+    position: absolute;
+    top: -50px; /* Menempatkan kucing di atas title */
+    left: 50%; /* Posisikan secara horizontal di tengah */
+    transform: translateX(-50%);
+    z-index: 1060; /* Pastikan kucing berada di atas title */
+    width: 150px; /* Ukuran GIF */
+}
+
+
+
+/* Efek kembang api */
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) translate(50px, 50px);
+        opacity: 0;
+    }
+}
+
+.spark {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: yellow;
+    border-radius: 50%;
+    animation: sparkle 5s ease-out forwards;
+    -webkit-animation: sparkle 5s ease-out forwards;
+}
+.fireworks-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #ff5e57;
+    font-weight: bold;
+    z-index: 1100;
+    animation: fadeOut 5s ease-out forwards;
+}
+
+/* Animasi untuk memudarkan teks */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
